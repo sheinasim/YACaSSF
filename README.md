@@ -13,7 +13,9 @@ Dependencies:
 
 ### Usage
   
-> python nlStats.py \<genome percentage as an integer (50 for N50, 95 for N95)\> \<assembly.fasta\>
+> python nlStats.py \<genome percentage as an integer (50 for N50, 95 for N95)\> \<assembly.fasta\> 
+
+(pipe to `column -t` for more uniform looking tab separated output)
 
 If no arguments are provided, the script will return help message.
 
