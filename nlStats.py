@@ -36,6 +36,6 @@ def findNL(fasta, n):
 	L_outstr = "L" + str(n) + " : " + lengthstr 
 
 	
-	print("## file" + "\t" + "N" + str(n) + "\t" + "L" + str(n) + "\n" + fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
+	print("##file" + "\t" + "N" + str(n) + "\t" + "L" + str(n) + "\n" + fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
 
 findNL(args.fasta, args.genomePercentage)
