@@ -1,4 +1,4 @@
-# YACaSSF: Yet Another Contig and Scaffold Stats Finder 
+# YACaSSF: Yet Another Contig and Scaffold Stat Finder 
 Report number of assembly pieces (contigs or scaffolds) and length of piece to make up a genome percentage of your choosing.
 
 This script is designed to be run on a genome assembly in .fasta format 
