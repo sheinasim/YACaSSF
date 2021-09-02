@@ -7,7 +7,9 @@ from Bio import SeqIO
 parser = argparse.ArgumentParser()
 parser.add_argument("genomePercentage", type=int, help="Percentage of genome you want reported, eg: 95 for N95/L95")
 parser.add_argument("fasta", help=".fasta file you want the stats of.")
+parser.add_argument("--noheader", help="do not display header (default: display header)", action="store_true")
 args = parser.parse_args()
+
 
 def findNL(fasta, n):
 	df = pd.DataFrame(columns=('Sequence', 'Length'))
@@ -31,11 +33,10 @@ def findNL(fasta, n):
 		length = ctglength/1000000
 		lengthstr = str(length) + "MB"
 	fastaname = args.fasta.split('/')[-1]
-	N_outstr = "N" + str(n) + " : " + str(idx+1)
 
-	L_outstr = "L" + str(n) + " : " + lengthstr 
-
-	
-	print("##file" + "\t" + "N" + str(n) + "\t" + "L" + str(n) + "\n" + fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
+	if args.noheader:
+		print(fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
+	else:	
+		print("##file" + "\t" + "N" + str(n) + "\t" + "L" + str(n) + "\n" + fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
 
 findNL(args.fasta, args.genomePercentage)
