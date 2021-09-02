@@ -13,7 +13,9 @@ Dependencies:
 
 ### Usage
   
-> python nlStats.py \<genome percentage as an integer (50 for N50, 95 for N95)\> \<assembly.fasta\> [Optional: --noheader (stdout has no header, good for running in for loop with multiple assemblies) default: header] 
+> python nlStats.py \<genome percentage as an integer (50 for N50, 95 for N95)\> \
+	\<assembly.fasta\> \
+	[Optional: --noheader (stdout has no header, good for running in for loop with multiple assemblies) default: header] 
 
 (pipe to `column -t` for more uniform looking tab separated output)
 
