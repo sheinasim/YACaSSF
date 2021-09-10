@@ -26,7 +26,7 @@ def findNL(fasta, n):
 	idx = (df_sorted['Cumulative Length'] > prop_asm_size).argmax()
 	ctglength = df_sorted['Length'].loc[idx]
 
-	if ctglength > 1000 & ctglength < 1000000:
+	if ctglength <= 1000000:
 		length = ctglength/1000
 		lengthstr = str(length) + "KB"
 	elif ctglength > 1000000:
