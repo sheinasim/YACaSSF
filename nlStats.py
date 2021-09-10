@@ -28,15 +28,15 @@ def findNL(fasta, n):
 
 	if ctglength <= 1000000:
 		length = ctglength/1000
-		lengthstr = str(length) + "KB"
+		lengthstr = str(length) + " KB"
 	elif ctglength > 1000000:
 		length = ctglength/1000000
-		lengthstr = str(length) + "MB"
+		lengthstr = str(length) + " MB"
 	fastaname = args.fasta.split('/')[-1]
 
 	if args.noheader:
-		print(fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
+		print(fastaname + "\t" + str(idx+1) + "\t" + lengthstr + "\t" + str(asm_size/1000000) + " MB")
 	else:	
-		print("##file" + "\t" + "N" + str(n) + "\t" + "L" + str(n) + "\n" + fastaname + "\t" + str(idx+1) + "\t" + lengthstr)
+		print("##file" + "\t" + "N" + str(n) + "\t" + "L" + str(n) + "\t" + "Size (MB)" + "\n" + fastaname + "\t" + str(idx+1) + "\t" + lengthstr + "\t" + str(asm_size/1000000))
 
 findNL(args.fasta, args.genomePercentage)
